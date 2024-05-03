@@ -1,0 +1,1048 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --blackBackground: #25262dff;
+    --blueShade: #02a1ed;
+}
+
+@font-face {
+    font-family: content;
+    src: url(fonts/COLLEGE.TTF);
+}
+
+@font-face {
+    font-family: question;
+    src: url(fonts/OCRAEXT.TTF);
+}
+
+body{ 
+    background-color: var(--blackBackground);
+}
+/*
+Begin page
+*/
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blackBackground);
+    overflow: hidden;
+}
+
+.mainFullScreen{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--blackBackground);
+    overflow: hidden;
+}
+
+.nukeObject{
+    position: absolute;
+    top: 7%;
+    left: 3%;
+    z-index: 2;
+    width: 4.5em;
+    opacity: 0;
+    aspect-ratio: 1;
+    animation: appear 1.2s ease both 1s, nuke 5s ease-in infinite 0.9s;
+    
+}
+
+.nuke{
+    position: absolute;
+    top: 7%;
+    left: 3%;
+    z-index: 2;
+    width: 4.5em;
+    aspect-ratio: 1;
+    
+}
+
+.nukeRemove{
+    transform: scale(1);
+    transform-origin: center;
+    animation: NukeRemove 1.5s linear 1s both;
+}
+
+.heading1{
+    color: white;
+    z-index: 1;
+    margin-top: 0.7em;
+    margin-left: 2em;
+    font-size: 4em;
+    text-shadow: -1px -1px 0 var(--blueShade), 1px -1px 0 var(--blueShade), -1px 1px 0 var(--blueShade), 1px 1px 0 var(--blueShade);
+    font-weight: normal;
+    letter-spacing: 0.35rem;
+    font-family: content;
+}
+
+.headingRemove{
+    transform-origin: left;
+    transform: scaleX(1);
+    animation: h1Remove 1s linear 1s both;
+}
+
+.headingBackground{
+    position: relative;
+    animation: h1background 1.5s ease both;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    animation-delay: 4s;
+    
+}
+
+
+.heading1 .headingBackground::after{
+    content: "";
+    background-color: var(--blackBackground);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: h1animation 2s ease both;
+    animation-delay: 2.2s;
+    
+}
+
+.sec{
+    margin-top: 0.6em;
+    padding: 2em;
+    
+}
+
+.content{
+    width: 0em;
+    margin-left: 2em;
+    opacity: 0;
+    height: 0px;
+    font-family: content;
+    background-color: var(--blueShade);
+    padding: 0.2em;
+    border-radius: 0.5em;
+    border:1px solid var(--blueShade);
+    animation: Appear 1.2s ease both 4.8s, lineShow 5.8s ease both 5.6s;
+}
+
+.lineRemove{
+    opacity: 1;
+    height: 270px;
+    color: white;
+    background-color: #38343c;
+    animation: removeLine 1.3s ease both 1s;
+}
+
+.dynamicText{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    
+}
+
+.dynamicText li{
+    list-style: none;
+    margin-left: 16px;
+    font-size: 19px;
+    letter-spacing: 1.78px;
+    color: white;
+    line-height: 1.6em;
+    margin-top: 20px;
+}
+
+.lineErase{
+    animation: eraseLine 1s ease-out both;
+    opacity: 1;
+}
+
+.line1{
+    animation: showText1 10ms linear both;
+    animation-delay: 7s;
+    opacity: 0;
+}
+
+
+.line2{
+    animation: showText2 10ms linear both;
+    animation-delay: 8.3s;
+    opacity: 0;
+}
+
+.line3{
+    animation: showText3 10ms linear both;
+    animation-delay: 9.4s;
+    opacity: 0;
+}
+
+
+.line4{
+    animation: showText4 10ms linear both;
+    animation-delay: 10.1s;
+    opacity: 0;
+}
+
+.line5{
+    animation: showText5 10ms linear both;
+    animation-delay: 12s;
+    opacity: 0;
+}
+
+.dynamicText li span{
+    position: relative;
+}
+
+.dynamicText li .line1::after,
+.dynamicText li .line2::after,
+.dynamicText li .line3::after,
+.dynamicText li .line4::after,
+.dynamicText li .line5::after{
+    content: "";
+    background-color: var(--blackBackground);
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 150%;
+}
+
+.dynamicText li .line1::after{
+    animation: line1 3s steps(94) both;
+    animation-delay: 6.2s;
+}
+.dynamicText li .line2::after{
+    animation: line2 3s steps(94) both;
+    animation-delay: 7.5s;
+}
+.dynamicText li .line3::after{
+    animation: line3 3s steps(80) both;
+    animation-delay: 8.6s;
+}
+.dynamicText li .line4::after{
+    animation: line4 3s steps(70) both;
+    animation-delay: 9.2s;
+}
+.dynamicText li .line5::after{
+    animation: line5 2s steps(65) both;
+    animation-delay: 11.4s;
+}
+
+.beginbtn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 0;
+    background-color: #38343c;
+    margin-top: 2em;
+    margin-left: 2em;
+    border-radius: 5px;
+    opacity: 0;
+    cursor: pointer;
+    border: 1px solid var(--blueShade);
+    animation: beginBtnAppear 2s both ease 13.6s;
+}
+
+
+.begintext{
+    position: absolute;
+    width: 10em;
+    opacity: 0;
+    animation: textAppear 1.5s ease both 15.6s;
+}
+
+/* 
+Start page 
+*/
+
+.circle{
+    position: relative;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    width: 15.5em;
+    margin-top: 3%;
+    margin-left: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outerCircle{
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    aspect-ratio: 1/1;
+    width: 15.5em;
+    animation: appearCircle 2s linear both, outerCircleAnimate 4s both ease-in infinite;
+}
+
+.whiteCircle{
+    position: absolute;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    opacity: 0;
+    width: 13.4em;
+    animation: appearCircle 2s linear both, whiteCircleAnimate 120s  both steps(120) infinite;
+}
+
+.blueDashedStrips{
+    position: absolute;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    opacity: 0;
+    width: 11em;
+    animation: appearCircle 2s linear both, blueDashedStripsAnimate 100s both steps(100) infinite reverse;
+}
+
+.ArrowCircle{
+    position: absolute;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    width: 10em;
+    margin-right: 0.4em;
+    opacity: 0;
+    margin-top: 0.3em;
+    transform: rotate(-15deg);
+    transform-origin: center;
+    animation: appearCircle 2s linear both ,ArrowCircleAnimate 5s both linear infinite;
+}
+
+.innerThinWhiteCircle{
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    aspect-ratio: 1/1;
+    width: 6.9em;
+    animation: appearCircle 2s linear both;
+}
+
+.innerAimCircle{
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    aspect-ratio: 1/1;
+    width: 5em;
+    animation: appearCircle 2s linear both;
+}
+
+.CrosshairCircle{
+    position: absolute;
+    z-index: 2;
+    aspect-ratio: 1/1;
+    opacity: 0;
+    width: 2em;
+    animation: appearCircle 2s linear both;
+}
+
+/* 
+    MCQ Page 
+*/
+
+.headDesign1{
+    position: absolute;
+    top: 3em;
+    right: 10em;
+    z-index: 4;
+    width: 20em;
+}
+
+.coverheadDesign1{
+    position: absolute;
+    z-index: 5;
+    background-color: var(--blackBackground);
+    width: 20.5em;
+    height: 2.5em;
+    top: 2.9em;
+    right: 9.8em;
+    animation: appearheadDesign1 3s linear both 0.5s;
+}
+
+.disappearheadDesign1{
+    animation: disappearheadDesign1 2s linear both 0.5s;
+}
+
+.headDesign2{
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    z-index: 3;
+    height: 18em;
+}
+
+.coverheadDesign2-1{
+    position: absolute;
+    z-index: 4;
+    background-color: var(--blackBackground);
+    width: 4em;
+    height: 20em;
+    top: 2%;
+    right: 3%;
+    animation: appearheadDesign2-1 1.7s linear both 1.41s;
+}
+
+.disappearheadDesign2-1{
+    animation: disappearheadDesign2-1 linear 1.5s both;
+}
+
+.coverheadDesign2-2{
+    position: absolute;
+    z-index: 4;
+    background-color: var(--blackBackground);
+    width: 10em;
+    height: 2.2em;
+    top: 1%;
+    right: 6%;
+    animation: appearheadDesign2-2 1.29s linear both 0.5s;
+}
+
+.disappearheadDesign2-2{
+    animation: disappearheadDesign2-2  1.09s linear both 1.3s;
+}
+
+.mainText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.coverMainText{
+    position: absolute;
+    width: 45em;
+    height: 4.2em;
+    margin-top: 0%;
+    z-index: 2;
+    background-color: var(--blackBackground);
+    transform-origin: right;
+    animation: coverMainText 1s both linear 1s;
+}
+
+.removecoverMainText{
+    animation: removecoverMainText 1s both linear 1.1s;
+}
+
+.coverSubText{
+    position: absolute;
+    width: 10em;
+    height: 4.2em;
+    margin-top: 15%;
+    margin-left: 30%;
+    z-index: 2;
+    background-color: var(--blackBackground);
+    transform-origin: right;
+    animation: coverSubText 0.3s both linear 2s;
+}
+
+.removecoverSubText{
+    animation: removecoverSubText 0.3s both linear 1s;
+}
+
+.JarvisText{
+    position: relative;
+    z-index: 1;
+    width: 40em;
+}
+
+.QuizText{
+    position: absolute;
+    z-index: 1;
+    margin-top: 15%;
+    margin-left: 30%;
+    width: 10em;
+}
+
+.startButton{
+    position: relative;
+    margin-top: 12em;
+}
+
+.cover1{
+    z-index: 3;
+    position: absolute;
+    left: 29.5em;
+    width: 20.5em;
+    height: 7.5em;
+    animation: moveLayer1 3s both 2s linear;
+    transform-origin: left;
+    background-color: var(--blackBackground);
+}
+
+
+.removeStartBtn{
+    animation: removeStartBtn 2s both 1.3s linear;
+}
+
+.cover2{
+    z-index: 3;
+    position: absolute;
+    width: 4.9em;
+    height: 1.1em;
+    margin-left: 41%;
+    top: 0.3em;
+    border-bottom-right-radius: 1em;
+    animation: moveLayer2 0.8s both 5s linear;
+    transform-origin: right;
+    transform: skewX(-30deg);
+    background-color: var(--blackBackground);
+}
+.cover3{
+    z-index: 3;
+    position: absolute;
+    width: 4.5em;
+    height: 0.4em;
+    margin-left: 43.5em;
+    top: 6.5em;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 0.4em;
+    animation: moveLayer3 5s both 5.5s steps(11) infinite;
+    transform-origin: right;
+    transform: skewX(-30deg);
+    background-color: var(--blackBackground);
+}
+
+.StartButtonShape{
+    position: absolute;
+    z-index: 2;
+    margin-left: 37%;
+    width: 20em;
+    cursor: pointer;
+}
+
+.StartButtonText{
+    position: absolute;
+    z-index: 2;
+    margin-left: 42%;
+    margin-top: 2.9em;
+    width: 12.5em;
+    opacity: 0;
+    cursor: pointer;
+    animation: appearStartButtonText 1s linear 6s both;
+}
+
+.disappearStartButtonText{
+    animation: disappearStartButtonText 1s linear both 0.5s;
+}
+
+.StartButtonBg{
+    position: absolute;
+    margin-left: 37.8%;
+    margin-top: 0.2em;
+    z-index: 1;
+    width: 19.1em;
+    cursor: pointer;
+    animation: appearStartButtonBg 1s linear both 5.1s;
+}
+
+.disappearStartButtonBg{
+    animation: disappearStartButtonBg 1s linear both;
+}
+
+.nukebtn{
+    position: absolute;
+    top: 0em;
+    width: 1.8em;
+    left: 29.5em;
+    aspect-ratio: 1/1;
+    opacity: 0;
+    animation: appearNukebtn 1.2s ease both 7s, nukebtn 5s ease-in infinite 7.1s both;
+}
+
+.disappearNukebtn{
+    animation: disappearNukebtn 0.5s ease-in both;
+}
+
+.OuterQuestionBlock{
+    position: absolute;
+    width: 38em;
+    top: 12em;
+    left: 16em;
+    opacity: 0;
+    animation: appearOuterQuestionBlock 0.5s ease-in both 0.3s;
+}
+
+.InnerQuestionBlock{
+    position: absolute;
+    bottom: 8em;
+    left: 17.7em;
+    width: 35em;
+    opacity: 0;
+    animation: appearInnerQuestionBlock 0.5s ease-in both 0.5s;
+}
+
+.QuestionText{
+    position: absolute;
+    width: 18em;
+    left: 22em;
+    top: 17em;
+    opacity: 0;
+    animation: appearQuestionText 0.5s ease-in both 1s;
+}
+
+.QuestionNumberCircle{
+    position: absolute;
+    width: 10em;
+    left: 42em;
+    top: 14em;
+    opacity: 0;
+    animation: appearQuestionNumberCircle 0.5s ease-in both 1.2s;
+}
+
+.HeadQuestionDesign{
+    position: absolute;
+    left: 30%;
+    top: 6%;
+    width: 32em;
+    opacity: 0;
+    animation: appearHeadQuestionDesign 0.5s ease-in both;
+}
+
+.no0, .no1 {
+    position: absolute;
+    opacity: 0;
+}
+
+.no0{
+    left: 44.5em;
+    top: 18em;
+    width: 2.5em;
+    animation: appearno0 0.05s linear both 1.5s;
+}
+
+.no1{
+    left: 48em;
+    top: 17.5em;
+    width: 0.9em;
+    animation: appearno1 0.05s linear both 2s;
+}
+
+.optionBlock{
+    position: absolute;
+    right: 5%;
+    top: 28%;
+    height: 20em;
+    width: 21em;
+}
+
+.Option1{
+    position: relative;
+    float: right;
+    width: 18em;
+    margin-bottom: 2em;
+    opacity: 0;
+    animation: appearOption1 0.5s ease-out 2s both;
+}
+
+.Option2{
+    position: relative;
+    float: right;
+    width: 18em;
+    margin-bottom: 2em;
+    opacity: 0;
+    animation: appearOption2 0.5s ease-out 2.3s both;
+}
+
+.Option3{
+    position: relative;
+    float: right;
+    width: 18em;
+    margin-bottom: 2em;
+    opacity: 0;
+    animation: appearOption3 0.5s ease-out 2.6s both;
+}
+
+.Option4{
+    position: relative;
+    float: right;
+    width: 18em;
+    margin-bottom: 2em;
+    opacity: 0;
+    animation: appearOption4 0.5s ease-out 2.9s both;
+}
+
+.NextButton{
+    position: relative;
+    float: right;
+    width: 12em;
+    cursor: pointer;
+    opacity: 0;
+    animation: appearNextButton 0.5s ease-in 2.9s both;
+}
+
+.progressBar{
+    position: absolute;
+    display: flex;
+    justify-content:space-evenly ;
+    /* background-color: black; */
+    width: 100%;
+    height: 5em;
+    bottom: 1em;
+}
+
+.hexagon {
+    position: relative;
+    height: 80px;
+    width: 46.15px;
+    fill: #33343dff;
+    stroke: #02a1edff;
+    stroke-width: 2px; 
+    transform: scaleX(0.9);
+    opacity: 0; 
+}
+
+.whiteFillHex{
+    animation: fillHex 1s linear both;
+    transition: 1s fill;
+    fill: white;
+}
+
+.hexagon:nth-child(1){
+    animation: appearHex1 0.15s linear both 2.4s,fillHex1 1s linear both 4.5s;
+}
+
+.hexagon:nth-child(2){
+    animation: appearHex2 0.15s linear both 2.5s;
+}
+
+.hexagon:nth-child(3){
+    animation: appearHex3 0.15s linear both 2.6s;
+}
+
+.hexagon:nth-child(4){
+    animation: appearHex4 0.15s linear both 2.7s;
+}
+
+.hexagon:nth-child(5){
+    animation: appearHex5 0.15s linear both 2.8s;
+}
+
+.hexagon:nth-child(6){
+    animation: appearHex6 0.15s linear both 2.9s;
+}
+
+.hexagon:nth-child(7){
+    animation: appearHex7 0.15s linear both 3s;
+}
+
+.hexagon:nth-child(8){
+    animation: appearHex8 0.15s linear both 3.1s;
+}
+
+.hexagon:nth-child(9){
+    animation: appearHex9 0.15s linear both 3.2s;
+}
+
+.hexagon:nth-child(10){
+    animation: appearHex10 0.15s linear both 3.3s;
+}
+
+.hexagon:nth-child(11){
+    animation: appearHex11 0.15s linear both 3.4s;
+}
+
+.hexagon:nth-child(12){
+    animation: appearHex12 0.15s linear both 3.6s;
+}
+
+.hexagon:nth-child(13){
+    animation: appearHex13 0.15s linear both 3.8s;
+}
+
+.hexagon:nth-child(14){
+    animation: appearHex14 0.15s linear both 3.9s;
+}
+
+.hexagon:nth-child(15){
+    animation: appearHex15 0.15s linear both 4s;
+}
+
+.optionBlock input{
+    appearance: none;
+    display: none;
+}
+
+.optionBlock label{
+    cursor: pointer;
+    z-index: 2;
+    transition: 1s;
+}
+
+.optionCircle1{
+    position: absolute;
+    width: 2.25em;
+    border: 1.5px solid var(--blueShade);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    left: 3.55em;
+    top: 0.54em;
+    cursor: pointer;
+    display: none;
+    transition: 1s;
+}
+
+.optionCircle2{
+    position: absolute;
+    width: 2.25em;
+    border: 1.5px solid var(--blueShade);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    left: 3.5em;
+    top: 5.8em;
+    cursor: pointer;
+    display: none;
+}
+
+.optionCircle3{
+    position: absolute;
+    width: 2.25em;
+    border: 1.5px solid var(--blueShade);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    left: 3.45em;
+    top: 11.1em;
+    cursor: pointer;
+    display: none;
+}
+
+.optionCircle4{
+    position: absolute;
+    width: 2.25em;
+    border: 1.5px solid var(--blueShade);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    left: 3.5em;
+    top: 16.3em;
+    cursor: pointer;
+    display: none;
+}
+
+.optionBlock input:nth-child(1):checked ~ .optionCircle1,
+.optionBlock input:nth-child(2):checked ~ .optionCircle2,
+.optionBlock input:nth-child(3):checked ~ .optionCircle3,
+.optionBlock input:nth-child(4):checked ~ .optionCircle4{
+    display: block;
+    opacity: 0;
+    animation: appearOptionCircle 0.2s ease-in-out both;
+}
+
+.QuestionContent{
+    position: absolute;
+    font-family: question;
+    left: 26%;
+    top: 60%;
+    width: 33ch;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    opacity: 0;
+    animation: appearQuestionContent 1s ease-in-out both 1s;
+}
+
+
+.optionText1{
+    position: absolute;
+    font-family: question;   
+    color: whitesmoke;
+    opacity: 0;
+    font-size: 1.5rem;
+    left: 8rem;
+    top: 1rem;
+    animation: appearOptionText 0.5s linear both 3.1s;
+}
+
+.optionText2{
+    position: absolute;
+    font-family: question;   
+    color: whitesmoke;
+    font-size: 1.5rem;
+    opacity: 0;
+    left: 8rem;
+    top: 6.2rem;
+    animation: appearOptionText 0.5s linear both 3.1s;
+}
+
+.optionText3{
+    position: absolute;
+    font-family: question;   
+    color: whitesmoke;
+    font-size: 1.5rem;
+    opacity: 0;
+    left: 8rem;
+    top: 11.5rem;
+    animation: appearOptionText 0.5s linear both 3.1s;
+}
+
+.optionText4{
+    position: absolute;
+    font-family: question;   
+    color: whitesmoke;
+    opacity: 0;
+    font-size: 1.5rem;
+    left: 8rem;
+    top: 16.8rem;
+    animation: appearOptionText 0.5s linear both 3.1s;
+}
+
+.noText{
+    font-size: 60px;
+    font-family: question;
+    margin-left: 11.95em;
+    margin-top: -10px;
+    color: var(--blueShade);
+    opacity: 1;
+}
+
+.appearNoText{
+    animation: appearNoText 0.5s linear 1.4s both;
+}
+
+.ResultText{
+    position: absolute;
+    width: 30em;
+    margin-top: 15em;
+    margin-left: 25em;
+}
+
+.outermostStrokeCircleDiv{
+    position: absolute;
+    z-index: 2;
+    width: 3.7em;
+    margin-left: 19em;
+    margin-top: 15em;
+    animation: outermostStrokeCircle 3s infinite linear both;
+}
+
+.outermostStrokeCircle{
+    z-index: 2;
+    width: 3.5em;
+}
+
+.innermostStrokeCircleDiv{
+    position: absolute;
+    /* background-color: black; */
+    z-index: 3;
+    height: 2.15em;
+    width: 2.15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 19.8em;
+    margin-top: 15.8em;
+    animation: innermostStrokeCircle 1.5s infinite linear both;
+}
+
+.innermostStrokeCircle{
+    z-index: 3;
+    width: 1.5em;
+}
+
+.ResultBracketLeft{
+    position: absolute;
+    margin-left: 24em;
+    margin-top: 22em;
+    width: 3.5em;
+}
+.ResultBracketRight{
+    position: absolute;
+    margin-left: 48em;
+    margin-top: 22em;
+    width: 3.5em;
+    transform: rotate(180deg);
+}
+
+.resultDigits{
+    position: absolute;
+    font-family: question;
+    margin-left: 4.7em;
+    margin-top: 3.95em;
+    font-size: 6rem;
+    color: white;
+}
+
+.leftContainer {
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    left: -50vw;
+    top: 0;
+    background-color: var(--blackBackground);
+    transition: transform 2s ease;
+    z-index: 5;
+}
+
+.rightContainer {
+    top: 0;
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    right: -50vw;
+    background-color: var(--blackBackground);
+    transition: transform 2s ease;
+    z-index: 5;
+}
+
+.ResultText{
+    position: absolute;
+    width: 30em;
+    margin-top: 15em;
+    margin-left: 25em;
+}
+
+.outermostStrokeCircleDiv{
+    position: absolute;
+    z-index: 2;
+    width: 3.7em;
+    margin-left: 19em;
+    margin-top: 15em;
+    animation: outermostStrokeCircle 3s infinite linear both;
+}
+
+.outermostStrokeCircle{
+    z-index: 2;
+    width: 3.5em;
+}
+
+.innermostStrokeCircleDiv{
+    position: absolute;
+    /* background-color: black; */
+    z-index: 3;
+    height: 2.15em;
+    width: 2.15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 19.8em;
+    margin-top: 15.8em;
+    animation: innermostStrokeCircle 1.5s infinite linear both;
+}
+
+.innermostStrokeCircle{
+    z-index: 3;
+    width: 1.5em;
+}
+
+.ResultBracketLeft{
+    position: absolute;
+    margin-left: 24em;
+    margin-top: 22em;
+    width: 3.5em;
+}
+.ResultBracketRight{
+    position: absolute;
+    margin-left: 48em;
+    margin-top: 22em;
+    width: 3.5em;
+    transform: rotate(180deg);
+}
+
+.resultDigits{
+    position: absolute;
+    font-family: question;
+    margin-left: 4.7em;
+    margin-top: 3.95em;
+    font-size: 6rem;
+    color: white;
+}

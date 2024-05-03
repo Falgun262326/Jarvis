@@ -5,7 +5,7 @@ import speech_recognition as sr
 import datetime
 import webbrowser
 import subprocess
-# import pywhatkit
+import pywhatkit
 
 speaker = win32com.client.Dispatch("SAPI.SpVoice")
 
@@ -108,18 +108,18 @@ def time(query):
         print(f"{print_hr}:{print_min} {AmPm}")
         speak(f"Right Now it is {hourr} {minutee} {AmPm}")
 
-# def emergencyMsg(query):
-#     phoneNo = '+919714655344'
-#     msg = 'Emergency!!! Please Help Me. I am in trouble. Please send immediate assistance.'
-#     hour = int(datetime.datetime.now().hour)
-#     minute = int(datetime.datetime.now().minute)
-#     if 'help help'.lower() in query.lower():
-#         speak('Wait for a few moments please')
-#         try:
-#             pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+1)
-#         except:
-#             pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+2)
-#         speak("Sending message")
+def emergencyMsg(query):
+    phoneNo = '+919714655344'
+    msg = 'Emergency!!! Please Help Me. I am in trouble. Please send immediate assistance.'
+    hour = int(datetime.datetime.now().hour)
+    minute = int(datetime.datetime.now().minute)
+    if 'help help'.lower() in query.lower():
+        speak('Wait for a few moments please')
+        try:
+            pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+1)
+        except:
+            pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+2)
+        speak("Sending message")
 
 
 def starting_voice():
@@ -202,7 +202,7 @@ def game(query):
         notification()
         print(f'Opening Quiz')
         speak(f'Opening Quiz')
-        os.startfile(r"C:\Users\krimy\OneDrive\Documents\Falgun\Web Practice\JARVIS Quiz\index.html")
+        os.startfile(r"C:\Users\krimy\OneDrive\Documents\Falgun\Jarvis\JARVIS Quiz\index.html")
 
 
 #main function
@@ -232,7 +232,7 @@ def listen_main():
         time(query)
         apps(query)
         intro(query)
-        # emergencyMsg(query)
+        emergencyMsg(query)
 
         if 'play'.lower() in query.lower() and 'music' not in query.lower():
             game(query)
@@ -298,7 +298,7 @@ def type_main():
         apps(command)
         intro(command)
         game(command)
-        # emergencyMsg(command)
+        emergencyMsg(command)
 
         if command == 'exit' or command == 'quit':
             jarvis_speaks()

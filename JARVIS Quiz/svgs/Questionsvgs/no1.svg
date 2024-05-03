@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="23.152374"
+   height="72.149757"
+   viewBox="0 0 6.1257324 19.089623"
+   version="1.1"
+   id="svg49952"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="namanGame2.svg"
+   inkscape:export-filename="namanGame2.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview49954"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.5"
+     inkscape:cx="892"
+     inkscape:cy="518"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer5" /><defs
+     id="defs49949" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-274.88184,-110.73991)"><g
+       id="g3197"><g
+         inkscape:groupmode="layer"
+         id="layer6"
+         inkscape:label="Question Box"
+         transform="translate(1.2100501e-4,-2.4599499e-4)"><path
+           id="rect47646"
+           style="fill:#00a0ea;fill-opacity:1;stroke:#00a0ec;stroke-width:0.931542;stroke-linecap:square;stroke-dashoffset:3.16634;stroke-opacity:1;paint-order:markers stroke fill"
+           d="m 280.54166,111.61554 -5.19419,3.49918 v 14.24929 h 5.19419 z"
+           sodipodi:nodetypes="ccccc"
+           inkscape:label="1 number" /></g></g></g></svg>

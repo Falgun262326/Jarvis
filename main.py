@@ -6,7 +6,7 @@ import datetime
 import time
 import webbrowser
 import subprocess
-# import pywhatkit
+import pywhatkit
 import tkinter as tk
 from PIL import Image, ImageTk
 import threading
@@ -106,18 +106,18 @@ def timeCurrent(query):
         print(f"{print_hr}:{print_min} {AmPm}")
         speak(f"Right Now it is {hourr} {minutee} {AmPm}")
 
-# def emergencyMsg(query):
-#     phoneNo = '+919714655344'
-#     msg = 'Emergency!!! Please Help Me. I am in trouble. Please send immediate assistance.'
-#     hour = int(datetime.datetime.now().hour)
-#     minute = int(datetime.datetime.now().minute)
-#     if 'help help'.lower() in query.lower():
-#         speak('Wait for a few moments please')
-#         try:
-#             pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+1)
-#         except:
-#             pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+2)
-#         speak("Sending message")
+def emergencyMsg(query):
+    phoneNo = '+919714655344'
+    msg = 'Emergency!!! Please Help Me. I am in trouble. Please send immediate assistance.'
+    hour = int(datetime.datetime.now().hour)
+    minute = int(datetime.datetime.now().minute)
+    if 'help help'.lower() in query.lower():
+        speak('Wait for a few moments please')
+        try:
+            pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+1)
+        except:
+            pywhatkit.sendwhatmsg(phoneNo,msg , hour,minute+2)
+        speak("Sending message")
 
 
 def starting_voice():
@@ -199,7 +199,7 @@ def game(query):
         notification()
         print(f'Opening Quiz')
         speak(f'Opening Quiz')
-        os.startfile(r"C:\Users\krimy\OneDrive\Documents\Falgun\Web Practice\JARVIS Quiz\index.html")
+        os.startfile(r"C:\Users\krimy\OneDrive\Documents\Falgun\Jarvis\JARVIS Quiz\index.html")
 
 
 def listen_main():
@@ -224,7 +224,7 @@ def listen_main():
         timeCurrent(query)
         apps(query)
         intro(query)
-        # emergencyMsg(query)
+        emergencyMsg(query)
 
         if 'play'.lower() in query.lower() and 'music' not in query.lower():
             game(query)
